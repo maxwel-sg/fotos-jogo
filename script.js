@@ -8,7 +8,10 @@ for(let i = 8155; i <= 8442; i++){
 
         <div class="image-container">
 
-            <img src="fotos/IMG_${i}.JPG" alt="IMG_${i}">
+            <img
+            src="fotos/IMG_${i}.JPG"
+            alt="IMG_${i}"
+            loading="lazy">
 
             <div class="watermark"></div>
 
@@ -18,7 +21,9 @@ for(let i = 8155; i <= 8442; i++){
 
             <h3>IMG_${i}</h3>
 
-            <div class="preco">R$ 5,00</div>
+            <div class="preco">
+                R$ 5,00
+            </div>
 
             <a
             class="btn"
