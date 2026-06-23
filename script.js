@@ -11,7 +11,8 @@ for(let i = 8155; i <= 8442; i++){
             <img
             src="fotos/IMG_${i}.JPG"
             alt="IMG_${i}"
-            loading="lazy">
+            loading="lazy"
+            onclick="window.open('fotos/IMG_${i}.JPG','_blank')">
 
             <div class="watermark"></div>
 
