@@ -5,9 +5,9 @@
 }
 
 body{
-    font-family:Arial,sans-serif;
     background:#111;
     color:white;
+    font-family:Arial,sans-serif;
 }
 
 header{
@@ -20,7 +20,7 @@ header h1{
 }
 
 header p{
-    color:#ddd;
+    color:#ccc;
 }
 
 .gallery{
@@ -34,11 +34,12 @@ header p{
     background:#1b1b1b;
     border-radius:12px;
     overflow:hidden;
-    box-shadow:0 4px 12px rgba(0,0,0,.3);
+    box-shadow:0 0 10px rgba(0,0,0,.3);
 }
 
 .image-container{
     position:relative;
+    cursor:pointer;
 }
 
 .image-container img{
@@ -49,19 +50,23 @@ header p{
 .watermark{
     position:absolute;
     inset:0;
+
     background-image:
     repeating-linear-gradient(
         -30deg,
-        rgba(255,255,255,.12) 0px,
-        rgba(255,255,255,.12) 30px,
+        rgba(255,255,255,.10) 0px,
+        rgba(255,255,255,.10) 30px,
         transparent 30px,
         transparent 120px
     );
+
     pointer-events:none;
 }
 
 .watermark::before{
+
     content:"DAIN FOTOGRAFIA";
+
     position:absolute;
     inset:0;
 
@@ -69,8 +74,9 @@ header p{
     justify-content:center;
     align-items:center;
 
-    font-size:32px;
+    font-size:30px;
     font-weight:bold;
+
     color:rgba(255,255,255,.25);
 
     transform:rotate(-25deg);
@@ -87,14 +93,13 @@ header p{
 
 .preco{
     color:#00ff88;
-    font-size:18px;
+    font-size:20px;
     font-weight:bold;
-    margin-bottom:12px;
+    margin-bottom:15px;
 }
 
 .btn{
     display:block;
-    text-align:center;
 
     background:#25D366;
     color:white;
@@ -102,6 +107,7 @@ header p{
     text-decoration:none;
 
     padding:12px;
+
     border-radius:8px;
 
     font-weight:bold;
@@ -109,4 +115,45 @@ header p{
 
 .btn:hover{
     opacity:.9;
+}
+
+/* Modal */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.95);
+
+    z-index:9999;
+}
+
+.modal img{
+
+    max-width:90%;
+    max-height:90%;
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+}
+
+.fechar{
+
+    position:absolute;
+
+    top:20px;
+    right:30px;
+
+    color:white;
+
+    font-size:45px;
+
+    cursor:pointer;
 }
