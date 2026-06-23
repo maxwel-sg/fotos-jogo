@@ -1,6 +1,6 @@
 const gallery = document.getElementById("gallery");
 
-for(let i = 8155; i <= 8442; i++){
+for(let i = 8155; i <= 8278; i++){
 
     gallery.innerHTML += `
 
@@ -12,7 +12,7 @@ for(let i = 8155; i <= 8442; i++){
             src="fotos/IMG_${i}.JPG"
             alt="IMG_${i}"
             loading="lazy"
-            onclick="window.open('fotos/IMG_${i}.JPG','_blank')">
+            onclick="abrirFoto('fotos/IMG_${i}.JPG')">
 
             <div class="watermark"></div>
 
@@ -39,3 +39,23 @@ for(let i = 8155; i <= 8442; i++){
 
     `;
 }
+
+function abrirFoto(src){
+
+    document.getElementById("modal").style.display = "block";
+
+    document.getElementById("imgModal").src = src;
+}
+
+document.querySelector(".fechar").onclick = () => {
+
+    document.getElementById("modal").style.display = "none";
+};
+
+document.getElementById("modal").onclick = (e) => {
+
+    if(e.target.id === "modal"){
+
+        document.getElementById("modal").style.display = "none";
+    }
+};
