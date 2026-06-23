@@ -3,126 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fotos do Jogo</title>
 
-<style>
-body{
-    margin:0;
-    background:#111;
-    color:#fff;
-    font-family:Arial,sans-serif;
-}
+<title>DAIN Fotografia Esportiva</title>
 
-header{
-    text-align:center;
-    padding:20px;
-}
-
-.galeria{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-    gap:20px;
-    padding:20px;
-}
-
-.card{
-    background:#1f1f1f;
-    border-radius:10px;
-    overflow:hidden;
-}
-
-.imagem{
-    position:relative;
-}
-
-.imagem img{
-    width:100%;
-    display:block;
-}
-
-.marca{
-    position:absolute;
-    inset:0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:28px;
-    font-weight:bold;
-    color:rgba(255,255,255,.25);
-    transform:rotate(-25deg);
-    pointer-events:none;
-}
-
-.info{
-    padding:15px;
-    text-align:center;
-}
-
-.preco{
-    color:#00ff88;
-    font-weight:bold;
-    margin:10px 0;
-}
-
-.btn{
-    display:block;
-    background:#25D366;
-    color:white;
-    text-decoration:none;
-    padding:12px;
-    border-radius:8px;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-    <h1>📸 Fotos do Jogo</h1>
-    <p>Cada foto custa R$ 5,00</p>
+    <h1>📸 DAIN Fotografia Esportiva</h1>
+
+    <p>
+        Escolha sua foto favorita.<br>
+        Cada foto custa <strong>R$ 5,00</strong>.
+    </p>
 </header>
 
-<div class="galeria" id="galeria"></div>
+<div id="gallery" class="gallery"></div>
 
-<script>
-
-const galeria = document.getElementById("galeria");
-
-for(let i=8155;i<=8442;i++){
-
-    galeria.innerHTML += `
-
-    <div class="card">
-
-        <div class="imagem">
-            <img src="fotos/IMG_${i}.JPG">
-            <div class="marca">
-                DAIN FOTOGRAFIA
-            </div>
-        </div>
-
-        <div class="info">
-            <h3>IMG_${i}</h3>
-
-            <div class="preco">
-                R$ 5,00
-            </div>
-
-            <a
-            class="btn"
-            target="_blank"
-            href="https://wa.me/5593991606690?text=Quero%20comprar%20a%20foto%20IMG_${i}">
-            Comprar
-            </a>
-
-        </div>
-
-    </div>
-
-    `;
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
