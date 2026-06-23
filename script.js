@@ -12,6 +12,7 @@ for(let i = 8155; i <= 8775; i++){
             src="fotos/IMG_${i}.JPG"
             alt="IMG_${i}"
             loading="lazy"
+            onerror="this.parentElement.parentElement.style.display='none'"
             onclick="abrirFoto('fotos/IMG_${i}.JPG')">
 
             <div class="watermark"></div>
