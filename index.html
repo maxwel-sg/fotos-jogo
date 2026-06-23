@@ -3,29 +3,137 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fotos do Jogo - DAIN Fotografia</title>
+<title>Fotos do Jogo</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#111;
+    color:#fff;
+}
+
+header{
+    text-align:center;
+    padding:30px;
+}
+
+header h1{
+    margin-bottom:10px;
+}
+
+header p{
+    color:#ccc;
+}
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    background:#1e1e1e;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.imagem{
+    position:relative;
+}
+
+.imagem img{
+    width:100%;
+    display:block;
+}
+
+/* Marca d'água */
+.imagem::after{
+    content:"DAIN FOTOGRAFIA";
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(-25deg);
+    font-size:30px;
+    font-weight:bold;
+    color:rgba(255,255,255,0.25);
+    pointer-events:none;
+}
+
+.info{
+    padding:15px;
+    text-align:center;
+}
+
+.preco{
+    color:#00ff88;
+    font-size:20px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.botao{
+    display:block;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    padding:12px;
+    border-radius:8px;
+    font-weight:bold;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>📸 DAIN Fotografia Esportiva</h1>
-    <p>Escolha sua foto favorita</p>
+    <h1>📸 Fotos do Jogo</h1>
 
-    <div class="busca">
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Buscar número da foto..."
-        >
-    </div>
+    <p>
+        Escolha sua foto favorita.<br>
+        Cada foto custa R$ 5,00.<br>
+        Envie o número da foto no WhatsApp.
+    </p>
 </header>
 
-<section id="gallery" class="gallery"></section>
+<div class="galeria">
 
-<script src="script.js"></script>
+    <div class="card">
+        <div class="imagem">
+            <img src="fotos/IMG_8155.JPG">
+        </div>
+
+        <div class="info">
+            <h3>Foto #001</h3>
+            <div class="preco">R$ 5,00</div>
+
+            <a class="botao"
+            href="https://wa.me/5593999999999?text=Quero%20comprar%20a%20foto%20%23001"
+            target="_blank">
+            Comprar
+            </a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="imagem">
+            <img src="fotos/IMG_8156.JPG">
+        </div>
+
+        <div class="info">
+            <h3>Foto #002</h3>
+            <div class="preco">R$ 5,00</div>
+
+            <a class="botao"
+            href="https://wa.me/93991606690?text=Quero%20comprar%20a%20foto%20%23002"
+            target="_blank">
+            Comprar
+            </a>
+        </div>
+    </div>
+
+</div>
 
 </body>
 </html>
