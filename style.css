@@ -34,7 +34,7 @@ header p{
     background:#1b1b1b;
     border-radius:12px;
     overflow:hidden;
-    box-shadow:0 0 10px rgba(0,0,0,.3);
+    box-shadow:0 0 10px rgba(0,0,0,.35);
 }
 
 .image-container{
@@ -47,6 +47,8 @@ header p{
     display:block;
 }
 
+/* Marca d'água da galeria */
+
 .watermark{
     position:absolute;
     inset:0;
@@ -54,9 +56,9 @@ header p{
     background-image:
     repeating-linear-gradient(
         -30deg,
-        rgba(255,255,255,.10) 0px,
-        rgba(255,255,255,.10) 30px,
-        transparent 30px,
+        rgba(255,255,255,.22) 0px,
+        rgba(255,255,255,.22) 40px,
+        transparent 40px,
         transparent 120px
     );
 
@@ -74,12 +76,15 @@ header p{
     justify-content:center;
     align-items:center;
 
-    font-size:30px;
-    font-weight:bold;
+    font-size:42px;
+    font-weight:900;
 
-    color:rgba(255,255,255,.25);
+    color:rgba(255,255,255,.45);
 
     transform:rotate(-25deg);
+
+    text-shadow:
+        2px 2px 5px rgba(0,0,0,.8);
 }
 
 .info{
@@ -111,6 +116,8 @@ header p{
     border-radius:8px;
 
     font-weight:bold;
+
+    transition:.2s;
 }
 
 .btn:hover{
@@ -131,10 +138,7 @@ header p{
     z-index:9999;
 }
 
-.modal img{
-
-    max-width:90%;
-    max-height:90%;
+.modal-container{
 
     position:absolute;
 
@@ -142,6 +146,38 @@ header p{
     left:50%;
 
     transform:translate(-50%,-50%);
+}
+
+#imgModal{
+
+    max-width:90vw;
+    max-height:90vh;
+
+    display:block;
+}
+
+/* Marca d'água do modal */
+
+.modal-watermark{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:70px;
+    font-weight:900;
+
+    color:rgba(255,255,255,.35);
+
+    transform:rotate(-25deg);
+
+    pointer-events:none;
+
+    text-shadow:
+        3px 3px 8px rgba(0,0,0,.8);
 }
 
 .fechar{
@@ -153,7 +189,9 @@ header p{
 
     color:white;
 
-    font-size:45px;
+    font-size:50px;
 
     cursor:pointer;
+
+    z-index:10000;
 }
