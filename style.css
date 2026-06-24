@@ -1,3 +1,4 @@
+```css
 *{
     margin:0;
     padding:0;
@@ -23,6 +24,8 @@ header p{
     color:#ccc;
 }
 
+/* GALERIA */
+
 .gallery{
     display:grid;
     grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
@@ -46,6 +49,8 @@ header p{
     width:100%;
     display:block;
 }
+
+/* MARCA D'ÁGUA DA GALERIA */
 
 .watermark{
     position:absolute;
@@ -85,6 +90,8 @@ header p{
         2px 2px 5px rgba(0,0,0,.8);
 }
 
+/* INFORMAÇÕES */
+
 .info{
     padding:15px;
     text-align:center;
@@ -100,6 +107,8 @@ header p{
     font-weight:bold;
     margin-bottom:15px;
 }
+
+/* BOTÕES */
 
 .btn{
     display:block;
@@ -117,10 +126,34 @@ header p{
     opacity:.9;
 }
 
-/* Modal */
+/* BOTÃO CARREGAR MAIS */
+
+.load-more{
+    display:block;
+    margin:20px auto 40px;
+    padding:14px 24px;
+
+    background:#25D366;
+    color:white;
+
+    border:none;
+    border-radius:8px;
+
+    font-size:16px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.load-more:hover{
+    opacity:.9;
+}
+
+/* MODAL */
 
 .modal{
-
     display:none;
 
     position:fixed;
@@ -132,22 +165,26 @@ header p{
 }
 
 .modal-container{
-
     position:absolute;
 
     top:50%;
     left:50%;
 
     transform:translate(-50%,-50%);
+
+    text-align:center;
 }
 
 #imgModal{
-
     max-width:90vw;
     max-height:70vh;
 
     display:block;
+
+    margin:auto;
 }
+
+/* MARCA D'ÁGUA DO MODAL */
 
 .modal-watermark{
 
@@ -171,23 +208,25 @@ header p{
         3px 3px 8px rgba(0,0,0,.8);
 }
 
+/* INFORMAÇÕES DO MODAL */
+
 .modal-info{
-
     text-align:center;
-
     margin-top:20px;
 }
 
+.modal-info h2{
+    margin-bottom:10px;
+}
+
 .modalPreco{
-
     color:#00ff88;
-
     font-size:26px;
-
     font-weight:bold;
-
     margin:15px 0;
 }
+
+/* BOTÃO FECHAR */
 
 .fechar{
 
@@ -210,20 +249,14 @@ header p{
 @media (max-width:768px){
 
     .gallery{
-
         grid-template-columns:repeat(3,1fr);
-
         gap:4px;
-
         padding:4px;
     }
 
     .card{
-
         background:none;
-
         border-radius:0;
-
         box-shadow:none;
     }
 
@@ -232,22 +265,34 @@ header p{
     }
 
     .image-container img{
-
         width:100%;
-
         aspect-ratio:1/1;
-
         object-fit:cover;
     }
 
     .watermark::before{
-
         font-size:14px;
     }
 
     .modal-watermark{
-
-        font-size:30px;
+        font-size:28px;
     }
 
+    #imgModal{
+        max-width:95vw;
+        max-height:60vh;
+    }
+
+    .modal-info h2{
+        font-size:18px;
+    }
+
+    .modalPreco{
+        font-size:22px;
+    }
+
+    .btn{
+        padding:10px;
+    }
 }
+```
