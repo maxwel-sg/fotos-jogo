@@ -13,7 +13,7 @@ for(let i = 8155; i <= 8776; i++){
             alt="IMG_${i}"
             loading="lazy"
             onerror="this.parentElement.parentElement.style.display='none'"
-            onclick="abrirFoto('fotos/IMG_${i}.JPG')">
+            onclick="abrirFoto('fotos/IMG_${i}.JPG','IMG_${i}')">
 
             <div class="watermark"></div>
 
@@ -41,11 +41,16 @@ for(let i = 8155; i <= 8776; i++){
     `;
 }
 
-function abrirFoto(src){
+function abrirFoto(src,nome){
 
     document.getElementById("modal").style.display = "block";
 
     document.getElementById("imgModal").src = src;
+
+    document.getElementById("modalNome").innerText = nome;
+
+    document.getElementById("modalComprar").href =
+    `https://wa.me/5593991606690?text=Olá,%20quero%20comprar%20a%20foto%20${nome}`;
 }
 
 document.querySelector(".fechar").onclick = () => {
