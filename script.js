@@ -1,45 +1,72 @@
 const gallery = document.getElementById("gallery");
+const btnMais = document.getElementById("carregarMais");
+
+const fotos = [];
 
 for(let i = 8155; i <= 8776; i++){
+    fotos.push(i);
+}
 
-    gallery.innerHTML += `
+let indiceAtual = 0;
+const porPagina = 30;
 
-    <div class="card">
+function carregarFotos(){
 
-        <div class="image-container">
+    const fim = Math.min(indiceAtual + porPagina, fotos.length);
 
-            <img
-            src="fotos/IMG_${i}.JPG"
-            alt="IMG_${i}"
-            loading="lazy"
-            onerror="this.parentElement.parentElement.style.display='none'"
-            onclick="abrirFoto('fotos/IMG_${i}.JPG','IMG_${i}')">
+    for(let j = indiceAtual; j < fim; j++){
 
-            <div class="watermark"></div>
+        const i = fotos[j];
 
-        </div>
+        gallery.innerHTML += `
 
-        <div class="info">
+        <div class="card">
 
-            <h3>IMG_${i}</h3>
+            <div class="image-container">
 
-            <div class="preco">
-                R$ 5,00
+                <img
+                src="thumbs/IMG_${i}.JPG"
+                alt="IMG_${i}"
+                loading="lazy"
+                onerror="this.parentElement.parentElement.style.display='none'"
+                onclick="abrirFoto('fotos/IMG_${i}.JPG','IMG_${i}')">
+
+                <div class="watermark"></div>
+
             </div>
 
-            <a
-            class="btn"
-            target="_blank"
-            href="https://wa.me/5593991606690?text=Olá,%20quero%20comprar%20a%20foto%20IMG_${i}">
-            Comprar
-            </a>
+            <div class="info">
+
+                <h3>IMG_${i}</h3>
+
+                <div class="preco">
+                    R$ 5,00
+                </div>
+
+                <a
+                class="btn"
+                target="_blank"
+                href="https://wa.me/5593991606690?text=Olá,%20quero%20comprar%20a%20foto%20IMG_${i}">
+                Comprar
+                </a>
+
+            </div>
 
         </div>
 
-    </div>
+        `;
+    }
 
-    `;
+    indiceAtual = fim;
+
+    if(indiceAtual >= fotos.length){
+        btnMais.style.display = "none";
+    }
 }
+
+carregarFotos();
+
+btnMais.addEventListener("click", carregarFotos);
 
 function abrirFoto(src,nome){
 
@@ -61,7 +88,6 @@ document.querySelector(".fechar").onclick = () => {
 document.getElementById("modal").onclick = (e) => {
 
     if(e.target.id === "modal"){
-
         document.getElementById("modal").style.display = "none";
     }
 };
