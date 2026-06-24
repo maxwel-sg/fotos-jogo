@@ -50,7 +50,7 @@ const fotos = [
 ];
 
 let indiceAtual = 0;
-const porPagina = 50;
+const porPagina = 35;
 
 function carregarFotos(){
 
