@@ -25,7 +25,7 @@ function carregarFotos(){
             <div class="image-container">
 
                 <img
-                src="thumbs/IMG_${i}.JPG"
+                src="fotos/IMG_${i}.JPG"
                 alt="IMG_${i}"
                 loading="lazy"
                 onerror="this.parentElement.parentElement.style.display='none'"
