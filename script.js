@@ -3,7 +3,7 @@ const btnMais = document.getElementById("carregarMais");
 
 const fotos = [];
 
-for(let i = 8155; i <= 8776; i++){
+for(let i = 8192; i <= 8776; i++){
     fotos.push(i);
 }
 
