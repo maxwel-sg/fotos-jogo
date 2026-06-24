@@ -46,7 +46,7 @@ function carregarFotos(){
                 <a
                 class="btn"
                 target="_blank"
-                href="https://wa.me/5593991606690?text=Olá,%20quero%20comprar%20a%20foto%20IMG_${i}">
+                href="https://wa.me/5593991767049?text=Olá,%20quero%20comprar%20a%20foto%20IMG_${i}">
                 Comprar
                 </a>
 
