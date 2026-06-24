@@ -1,6 +1,6 @@
 const gallery = document.getElementById("gallery");
 
-for(let i = 8155; i <= 8278; i++){
+for(let i = 8155; i <= 8776; i++){
 
     gallery.innerHTML += `
 
