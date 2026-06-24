@@ -25,7 +25,7 @@ header p{
 
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
     gap:20px;
     padding:20px;
 }
@@ -46,8 +46,6 @@ header p{
     width:100%;
     display:block;
 }
-
-/* Marca d'água da galeria */
 
 .watermark{
     position:absolute;
@@ -105,19 +103,14 @@ header p{
 
 .btn{
     display:block;
-
     background:#25D366;
     color:white;
-
     text-decoration:none;
-
     padding:12px;
-
     border-radius:8px;
-
     font-weight:bold;
-
     transition:.2s;
+    text-align:center;
 }
 
 .btn:hover{
@@ -151,12 +144,10 @@ header p{
 #imgModal{
 
     max-width:90vw;
-    max-height:90vh;
+    max-height:70vh;
 
     display:block;
 }
-
-/* Marca d'água do modal */
 
 .modal-watermark{
 
@@ -180,6 +171,24 @@ header p{
         3px 3px 8px rgba(0,0,0,.8);
 }
 
+.modal-info{
+
+    text-align:center;
+
+    margin-top:20px;
+}
+
+.modalPreco{
+
+    color:#00ff88;
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    margin:15px 0;
+}
+
 .fechar{
 
     position:absolute;
@@ -194,4 +203,51 @@ header p{
     cursor:pointer;
 
     z-index:10000;
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+    .gallery{
+
+        grid-template-columns:repeat(3,1fr);
+
+        gap:4px;
+
+        padding:4px;
+    }
+
+    .card{
+
+        background:none;
+
+        border-radius:0;
+
+        box-shadow:none;
+    }
+
+    .info{
+        display:none;
+    }
+
+    .image-container img{
+
+        width:100%;
+
+        aspect-ratio:1/1;
+
+        object-fit:cover;
+    }
+
+    .watermark::before{
+
+        font-size:14px;
+    }
+
+    .modal-watermark{
+
+        font-size:30px;
+    }
+
 }
